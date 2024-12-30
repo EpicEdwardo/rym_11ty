@@ -1,3 +1,3 @@
-# My homepage
+# Minor Labels Website Project
 
-Use some **bold** or italics or inline 'code'
+This website hosts the Price Lab's research on popular music. 
