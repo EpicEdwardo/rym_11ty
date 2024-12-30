@@ -1,0 +1,48 @@
+html, body {
+    margin:0;
+    padding: 0;
+}
+body {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    background:#777
+}
+
+nav ul li {
+    padding: 5px
+}
+
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #111;
+  outline: 1;
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  font-family: "Avenir", serif;
+  height: 100%;
+  background-color: #777;
+}
+body {
+  color: #fff;
+  text-align: center;
+}
+
+.info {
+  padding: 5em;
+}
