@@ -4,19 +4,44 @@
         <link rel="stylesheet" href="/assets/style.css">
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-
-                <li><a href="/about/">About</a></li>
-
-                <li><a href="/scholarship/">Scholarship</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/about/">About</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="myFunction()">Scholarship
+                <i class="fa fa-caret-down"></i>
+                </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="/scholarship/">First 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+            </div> 
+        </div>
+        
         <h1>Minor Labels Site</h1>
         <h2>{{title}}</h2>
         {{content | safe}}
+
+        <script>
+        
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(e) {
+            if (!e.target.matches('.dropbtn')) {
+            var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+        
+</script>
     </body>
 </html>
 

@@ -46,3 +46,67 @@ body {
 .info {
   padding: 5em;
 }
+
+/* nav bar */
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Avenir, sans-serif;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: rgb(123, 123, 131);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #c0bdbd;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #dde;
+}
+
+.show {
+  display: block;
+}
