@@ -3,9 +3,21 @@ html, body {
     padding: 0;
 }
 body {
-    max-width: 50rem;
+    max-width: 100rem;
+    height: 100%;
     margin: 0 auto;
+    font-family: "Diatype Variable";
+    font-style: normal;
 }
+
+.text {
+  margin-left: 0%;
+  padding-left: 26cm;
+  text-align: left;
+  font-family: "Diatype Variable";
+	font-size: 1.5rem;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -25,7 +37,7 @@ a,
 a:focus,
 a:hover {
   color: #111;
-  outline: 1;
+  outline: 2;
 }
 
 /*
@@ -34,63 +46,101 @@ a:hover {
 
 html,
 body {
-  font-family: "Avenir", serif;
+  font-family: "Diatype Variable";
+	font-style: normal;
   height: 100%;
-  background-color: #777;
+  background-color: #ffffff;
 }
 body {
-  color: #fff;
+  color: #000000;
   text-align: center;
 }
 
+h1 {
+	font-family: "Diatype Variable";
+	font-style: normal;
+	font-weight: 500;
+	margin: 0;
+	font-size: 5rem;
+	line-height: 2;
+	color: rgba(0, 0, 0, 0.85);
+	letter-spacing: 0em;
+	font-variation-settings: 'slnt' 0, 'MONO' 0;
+}
+
+h2 {
+	font-family: "Diatype Variable";
+	font-style: italic;
+  float: right;
+  border-style: solid;
+	font-weight: 200;
+	font-size: 2rem;
+	color: rgba(0, 0, 0, 0.85);
+	letter-spacing: 0 em;
+  padding: 1em;
+	font-variation-settings: 'slnt' 0, 'MONO' 0;
+}
+
 .info {
-  padding: 5em;
+  padding: 4em;
+}
+
+/* images */
+
+.image {
+  float: left;
+  border-style: solid;
 }
 
 /* nav bar */
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
-  font-family: Avenir, sans-serif;
+  background-color: #ffffff;
+  font-family: "Diatype Variable";
+	font-style: bold;
 }
 
 .navbar a {
   float: left;
-  font-size: 16px;
-  color: white;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 15%;
   text-decoration: none;
+  
 }
 
 .dropdown {
-  float: left;
   overflow: hidden;
+  float: center;
 }
 
 .dropdown .dropbtn {
   cursor: pointer;
-  font-size: 16px;  
+  font-size: 20px;  
   border: none;
   outline: none;
-  color: white;
-  padding: 14px 16px;
+  color: rgb(0, 0, 0);
+  padding: 14px 39%;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  font-family: "Diatype Variable";
+  font-style: normal;
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-  background-color: rgb(123, 123, 131);
+  background-color: rgb(215, 214, 214);
 }
 
 .dropdown-content {
   display: none;
-  position: absolute;
-  background-color: #c0bdbd;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 10px rgba(0,0,0,0.2);
+  position: fixed;
+  background-color: #ffffff;
+  margin-left: 13%;
+  min-width: 50px;
+  box-shadow: 0px 0px 00px 00px rgb(255, 255, 255);
   z-index: 1;
 }
 
@@ -104,9 +154,14 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: #dde;
+  background-color: rgb(215, 214, 214);
 }
 
 .show {
   display: block;
+}
+
+
+.allButFooter {
+  min-height: calc(100vh - 95px); 
 }
