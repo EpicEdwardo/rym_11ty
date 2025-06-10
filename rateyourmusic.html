@@ -13,12 +13,12 @@ title: RateYourMusic Research
   </style>
 
 <div class = "text2"> 
-    <b>Introduction</b> <br>
+    <h3>Introduction</h3>
     This TSNE graph charts artists based on genre similarities. This visualization reveals how artists relate with one another through a broader ecosystem of genre, providing insight into genre cohesion, artistic communities, and musicians who cross genre-boundaries.
 
     <br> <br>
     
-    <b>Methodology</b>  <br>
+    <h3>Methodology</h3> 
 This TSNE graph is constructed by simplifying a complex space of album genre relations into a two dimensional visualization. The dataset that this graph is based on represents every artist on a spreadsheet as a row (weight) and column. We reduce the columns to get the above graph. The TSNE employs an iterative process that preserves local relationships through a two dimensional approach.
 <br> <br>
 Genres are aggregated at the artist level, using major releases to represent an artist’s genre profile. This is in order to simplify a representation of the dataset. Each artist is represented as a row in a genre-weighted adjacency matrix, based on their top 5000 RateYourMusic albums.The dataset compiles all the major releases of an artist to represent that artist: as a result, an artist comes to represent all the genres associated with them. 
@@ -36,14 +36,14 @@ If an artist is far away from the rest of their genre it means they are connecte
 </div>
 
 <div class ="text2">
-<b>Findings</b><br>
+<h3>Findings</h3>
 The above graph reveals how certain genres are more tightly defined, with a stronger sense of internal cohesion. Jazz, indie rock, and metal all have clear clusters and movements, with the associated artists in each genre sharing many specific subgenres. Meanwhile, artists from genres such as pop and experimental have a porosity to them, and appear on the graph more dispersed, reflecting a more eccentric type of genre relationality. 
 <br><br>
-Ambient = scattered<br>
-Blues = clustered<br> 
-Classical music = clustered; one cluster modern classical, another cluster is more regional classical – fun figure: Glenn Branca, who appears in a punk cluster<br>
+Ambient = scattered<br><br>
+Blues = clustered<br> <br>
+Classical music = clustered; one cluster modern classical, another cluster is more regional classical – fun figure: Glenn Branca, who appears in a punk cluster<br><br>
 Electronic = scattered; fun figure: Portishead is near a cluster of R&B artists<br>
-Though there are three main clusters –<br>
+Though there are three main clusters:<br>
 <ul>
   <li>Japanese electronic and soundtrack music (Junichi Masuda [Pokemon soundtrack], Keiichi Suzuki [Mother soundtrack])</li>
   <li>Indietronica - Broadcast, Kero Kero Bonito</li>
