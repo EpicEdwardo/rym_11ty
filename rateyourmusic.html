@@ -1,0 +1,157 @@
+---
+layout: default-layout.njk
+title: RateYourMusic Research
+---
+
+<style>
+    ul {
+      margin-top: 0;
+    }
+    .genre {
+      margin-bottom: 20px;
+    }
+  </style>
+
+<div class = "text2"> 
+    <b>Introduction</b> <br>
+    This TSNE graph charts artists based on genre similarities. This visualization reveals how artists relate with one another through a broader ecosystem of genre, providing insight into genre cohesion, artistic communities, and musicians who cross genre-boundaries.
+
+    <br> <br>
+    
+    <b>Methodology</b>  <br>
+This TSNE graph is constructed by simplifying a complex space of album genre relations into a two dimensional visualization. The dataset that this graph is based on represents every artist on a spreadsheet as a row (weight) and column. We reduce the columns to get the above graph. The TSNE employs an iterative process that preserves local relationships through a two dimensional approach.
+<br> <br>
+Genres are aggregated at the artist level, using major releases to represent an artist’s genre profile. This is in order to simplify a representation of the dataset. Each artist is represented as a row in a genre-weighted adjacency matrix, based on their top 5000 RateYourMusic albums.The dataset compiles all the major releases of an artist to represent that artist: as a result, an artist comes to represent all the genres associated with them. 
+<br> <br>
+With a TSNE, it is less about a perfect representation of a geography between genres, and more about preserving local relations. This means proximity on the graph reflects shared genre relationships rather than literal genre distance.
+<br> <br>
+If two artists share a genre, an edge is drawn between them. This is weighted by a genre chain algorithm. For example, a thicker edge is drawn if two artists share the genre “Third Stream” but a much thinner edge is drawn if the two artists only share the genre “Jazz.” This is because “Jazz” is a top-level genre, while “Third Stream”—a fusion of jazz and Western classical music that emphasizes improvisation—is a subgenre. In the following TSNE, we primarily represent top-level genres.
+<br> <br>
+The location of an artist is based on the shared genres they have with their neighbors. How large an artist’s circle is represents their total score—how “big of a deal” they are. In this way, “size” can represent collaboration and influence, while location shows various genre clusters. 
+<br> <br>
+If an artist is far away from the rest of their genre it means they are connected to a lot of other artists with different primary genres. Meanwhile, if they are close, they share many specific genres. For example, Kanye West is apart from a cluster of Hip hop artists because he has a lot of different connections with other genres. Meanwhile, MF Doom neighbors other hip hop artists, indicating that his genre associations (Abstract Hip Hop, Jazz Rap, Experimental Hip Hop, etc.) are primarily within hip hop. One way to read distance from an artist’s primary genre cluster might suggest a divergence in critical categorization and discussion of that artist’s work within their primary genre’s community. These artists might be hard to categorize simply as working in one genre, but often situate themselves in multiple genres. In contrast, closeness might represent a shared style, audience, or critical categorization between neighbors.
+<br> <br>
+
+<div class='tableauPlaceholder' id='viz1742840480838' style='position: relative'><noscript><a href='#'><img alt='RYM Artists Arranged by Genre Similarity ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ar&#47;ArtistsbyTopGenreonRYM&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ArtistsbyTopGenreonRYM&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ar&#47;ArtistsbyTopGenreonRYM&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1742840480838');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</div>
+
+<div class ="text2">
+<b>Findings</b><br>
+The above graph reveals how certain genres are more tightly defined, with a stronger sense of internal cohesion. Jazz, indie rock, and metal all have clear clusters and movements, with the associated artists in each genre sharing many specific subgenres. Meanwhile, artists from genres such as pop and experimental have a porosity to them, and appear on the graph more dispersed, reflecting a more eccentric type of genre relationality. 
+<br><br>
+Ambient = scattered<br>
+Blues = clustered<br> 
+Classical music = clustered; one cluster modern classical, another cluster is more regional classical – fun figure: Glenn Branca, who appears in a punk cluster<br>
+Electronic = scattered; fun figure: Portishead is near a cluster of R&B artists<br>
+Though there are three main clusters –<br>
+<ul>
+  <li>Japanese electronic and soundtrack music (Junichi Masuda [Pokemon soundtrack], Keiichi Suzuki [Mother soundtrack])</li>
+  <li>Indietronica - Broadcast, Kero Kero Bonito</li>
+  <li>Contemporary electronic - Flying Lotus, Against All Logic, Kraftwerk</li>
+</ul>
+Experimental = quite scattered<br>
+You could say there are four main clusters<br>
+<ul>
+  <li>Experimental jazz [Peter Brotzmann Octet, The Bill Dixon Orchestra]</li>
+  <li>Moody, ambient, dark experimental [David Lynch, Anna Von Hausswolff, The Caretakers]</li>
+  <li>Freak folk experimental [Nico, Natural Snow Buildings]</li>
+  <li>Noise [Merzbow, Ramleh]</li>
+</ul>
+
+Folk = clustered<br>
+Interestingly, indie folk often finds its neighbors among classic folk — Joanna Newsom, Fleet Foxes, and Bill Callahan share neighbors with Leonard Cohen, Nick Drake, and Judee Sill<br>
+There is a small cluster of more indie-rock folk [Smog, Mt. Eerie, Elliot Smith] separate from the big cluster of folk<br><br>
+
+Hiphop = clustered<br>
+<ul>
+  <li>One big cluster of canonical hiphop [Jay Z, De La Soul, The Roots, Biggy, etc.]</li>
+  <li>Kanye on his own</li>
+  <li>A cluster of rock-heavy hiphop [Death Grips, Lil Ugly Mane, Danny Brown]</li>
+  <li>Beastie Boys on their own, connected to a lot of punk</li>
+</ul>
+
+Industrial & Noise = scattered<br><br>
+
+Jazz = clustered<br>
+<ul>
+  <li>One big cluster, which contains most of the jazz canon [Alice Coltrane, Mingus, Sanders, etc.]</li>
+  <li>Another cluster for more light-touched jazz music [Stan Getz, Vince Guaraldi, etc.]</li>
+  <li>Miles Davis appears on his own, connected to rock — a reflection of his fusion experiments later in his career</li>
+</ul>
+
+Pop = scattered<br>
+<ul>
+  <li>A cluster for softer indie-folk pop [Destroyer, Magnetic Fields, Belle & Sebastian]</li>
+  <li>A 70s pop cluster [The Wings, Carole King, and for some reason Father John Misty is neighboring this cluster]</li>
+  <li>Prestigious pop [Beach Boys, Weyes Blood, Fiona Apple, etc.] — i.e., pop with violins</li>
+  <li>More rock-based indie pop [Alvvays, Sheena Ringo, Tindersticks]</li>
+  <li>A cluster for 90s/early 00s indie “turtleneck and college” pop [Of Montreal, The Radio Dept, Lana Del Rey]</li>
+  <li>“Girlboss” pop [Lorde, Beyoncé, Caroline Polachek]</li>
+  <li>Japanese city pop [Masayoshi Takanaka, Himiko Kikuchi]</li>
+</ul>
+
+Psychedelia = scattered, more a descriptor of pop/rock music<br><br>
+
+Punk = pretty well clustered<br>
+<ul>
+  <li>A cluster of more upbeat 80s post-punk/art punk [Violent Femmes, Minutemen, The Birthday Party, Devo]</li>
+  <li>Noisey 80s punk [Bad Brains, Converge], which is near metal [Mastodon] and heavy rock [Melvins]</li>
+  <li>A cluster of emo punk [mewWithoutYou, La Dispute, My Chemical Romance], which is near more simplistic Pixies-inspired rock.</li>
+  <li>Modern punk / post-punk revival revival [Turnstile, Soul Glo]</li>
+  <li>90s indie punk [Unwound, Fugazi] — this cluster is close to alt rock ala Sonic Youth and Nirvana</li>
+  <li>Interestingly, classic punk [The Ramones, The Clash] often gets categorized under rock</li>
+</ul>
+
+R&B = clustered and pretty close with various clusters of hiphop<br>
+<ul>
+  <li>Classic R&B [Stevie Wonder, Curtis Mayfield, Al Green] are all in the same cluster as modern R&B [Frank Ocean, D’Angelo]</li>
+  <li>Michael Jackson and Janet Jackson are interestingly located away from the main cluster and near more dance and electronic artists</li>
+</ul>
+
+Regional Music = clustered based on different regions (understandably)<br>
+<ul>
+  <li>Africa (Fela Kuti), which is also near a jazz cluster</li>
+  <li>Samba / Bosa nova [Gal Costa, Gilberto Gil]</li>
+  <li>Country (as regional music) [Johnny Cash, John Fahey, Willie Nelson]</li>
+  <li>Reggae [Bob Marley, Keith Hudson]</li>
+</ul>
+
+Rock = scattered but with several different regions. Too many to list, but here are a few that are observable <br>
+<ul>
+  <li>Metal music is categorized under rock but forms its own cluster. It is not scattered, suggesting its influences are more internal than in other genres</li>
+  <li>Post Punk is categorized under rock and has a few clusters.</li>
+  <li>Post-punk revival [Squid, Protomartyr, Interpol], which is separate from canonical post-punk</li>
+  <li>Canonical post punk [Talking Heads, the Fall, Joy Division]</li>
+  <li>Alternative Rock (which is near post punk, suggesting the influence post punk has had on the subgenre) — Pixies, Nirvana, Sleater-Kinney</li>  
+  <li>Blondie and Jay Reatard are neighbors, and kind of removed from everyone else; wouldn’t expect that at all</li>
+  <li>There is an alt-country and country cluster [Emmylou Harris, MJ Lenderman]. An interesting question comes up: what distinguishes 'regional music' country from 'rock' country?</li>
+  <li>Psychedelic rock from the 60s [The United States of America, 13th Floor Elevators, George Harrison], which is in a different large cluster than dad rock</li>
+  <li>Dad rock, split into
+    <ul>
+      <li>Hard rock, dad rock [Pink Floyd, The Who, Rush]</li>
+      <li>Psychedelic hippie dad rock [The Grateful Dead, Janis Joplin, The Doors]</li>
+      <li>Cool “alternative” dad rock [Can, The Soft Machine]</li>
+      <li>80s/90s millennial dad rock [The Replacements, REM, The Cure] [which is in a different area than a, b, c]</li>
+    </ul>
+  </li>
+  <li>The UK ’80s cool rock sound [The Soft Boys, Manic Street Preachers, Morrissey] — essentially, UK rock where the frontman wears sunglasses</li>
+  <li>There is also a distinct Britpop cluster [Pulp, The Verve, Oasis], separate from the UK 'sunglasses rock' scene — likely due to its softer sound (though the sunglasses persisted)</li>
+  <li>A shoegaze section [My Bloody Valentine, Yo La Tengo, Slowdive]</li>
+  <li>Swans have a surprising amount of influence. They are in a cluster of what I call “influential” groups [Swans, Björk, Eno]</li>
+  <li>Radiohead is surprisingly neighbors with Beach House and Fishmans (a Japanese experimental rock band) — an unexpected grouping</li>
+</ul>
+
+Singer-Songwriter = clustered as you might expect<br>
+<ul>
+  <li>Indie singer-songwriter [Sufjan Stevens, Mt. Eerie, the Mountain Goats], who are also near the indie rock/indie pop cluster</li>  
+  <li>Classic singer-songwriter [Bob Dylan, Tom Waits, Tim Buckley]: the divide between folk and singer-songwriter feels rather porous</li>
+</ul>
+
+Scenes and Movements = scattered<br><br>
+
+Soundtrack = fairly well clustered, with neighbors in several major genres. Soundtracks tend to associate with jazz, ambient/electronic, rock, pop, or classical genres<br><br>
+
+Spoken word = scattered
+</div>
+
+

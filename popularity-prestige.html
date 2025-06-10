@@ -1,0 +1,138 @@
+---
+layout: default-layout.njk
+title: Popularity and Prestige
+---
+<style>
+     .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 210px;
+    }
+
+    .text-content {
+      max-width: 1050px;
+    }
+
+
+    table {
+      border-collapse: collapse;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    </style>
+
+
+
+<div class = "text2"> 
+    <img src="/assets/popularity-vs-prestige-graph.png"
+    alt="Popularity vs Prestige Graph"
+    style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+
+    <br>
+    <b>Introduction:</b> <br>
+This project explores the relationship between music prestige and popularity, particularly through the lens of genre. Our main focus was to see how critically acclaimed albums differ from commercially successful ones, and what patterns emerge across different genres. By comparing two music album datasets, we aim to uncover how music opinions differ between critics and the general public.
+
+
+<br> <br> 
+
+
+<div class="container">
+    <div class="text-content">
+        <b>
+            Data:
+            </b><br>
+            We used two primary datasets:<br> <br> 
+            
+            
+            <b>Rate Your Music (RYM):</b> This dataset includes the top 5000 albums as ranked by user ratings, with metadata on release year, primary genres, and rank. We treated this as a measure of critical acclaim or prestige.
+            
+            <br> <br>
+            <b>Billboard Top 200: </b>This dataset spans from 1963 to the present and includes over 30,000 albums that charted on Billboard’s weekly Top 200. Key fields include weekly chart position, total weeks on chart, and peak position. We treated this as a measure of commercial popularity.
+            
+            <br><br>We combined these datasets by matching artist and album names, creating a third dataset of albums that appear on both lists. This intersection includes approximately 1300 albums and represents works that were both commercially popular and critically acclaimed.
+            
+            To reduce visual clutter and focus on major trends, we grouped any genre with fewer than 100 occurrences into a category labeled "Other." A full breakdown of genre counts can be found in the accompanying genre frequency table.
+            
+            <br><br>
+            We determined album genre using the “primary genres” field from Rate Your Music. RYM uses a genre hierarchy tree, where each specific genre traces upward through broader parent genres to a small set of top-level categories. Since albums often have multiple primary genres, we identified the top-level genre for each and assigned the album the one that appeared most frequently. In the case of a tie, we selected one at random.
+            
+            
+            <br><br>
+            To analyze genre-based patterns, we created two stacked bar charts:
+            
+            <br><br>
+            <i>All RYM Albums – showing the genre distribution of all 5000 critically acclaimed albums by year.
+            </i>
+            <br><br>
+            <i>RYM + Billboard Albums – showing the genre distribution for albums that were both critically acclaimed and commercially successful.</i>
+            
+            <br><br>
+            To reduce visual clutter and focus on major trends, we grouped any genre with fewer than 100 occurrences into a category labeled "Other." A full breakdown of genre counts can be found in the accompanying genre frequency table on the right.
+            
+            <br><br>
+    </div>
+    <table>
+    <caption><b>RYM Genre Frequency Table</b></caption>
+    <thead>
+      <tr>
+        <th>Genre</th>
+        <th>Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Rock</td><td>2257</td></tr>
+      <tr><td>Jazz</td><td>586</td></tr>
+      <tr><td>Regional Music</td><td>329</td></tr>
+      <tr><td>Hip Hop</td><td>315</td></tr>
+      <tr><td>Classical Music</td><td>298</td></tr>
+      <tr><td>Punk</td><td>198</td></tr>
+      <tr><td>R&amp;B</td><td>166</td></tr>
+      <tr><td>Singer-Songwriter</td><td>161</td></tr>
+      <tr><td>Pop</td><td>157</td></tr>
+      <tr><td>Electronic</td><td>128</td></tr>
+      <tr><td>Dance</td><td>79</td></tr>
+      <tr><td>Folk</td><td>71</td></tr>
+      <tr><td>Soundtrack</td><td>70</td></tr>
+      <tr><td>Experimental</td><td>50</td></tr>
+      <tr><td>Blues</td><td>42</td></tr>
+      <tr><td>Psychedelia</td><td>22</td></tr>
+      <tr><td>Ambient</td><td>15</td></tr>
+      <tr><td>Industrial &amp; Noise</td><td>14</td></tr>
+      <tr><td>Comedy</td><td>9</td></tr>
+      <tr><td>New Age</td><td>9</td></tr>
+      <tr><td>Darkwave</td><td>8</td></tr>
+      <tr><td>Scenes &amp; Movements</td><td>6</td></tr>
+      <tr><td>Musical Theatre &amp; <br> Entertainment</td><td>3</td></tr>
+      <tr><td>Spoken Word</td><td>3</td></tr>
+      <tr><td>Reggae / Ska / Dancehall</td><td>1</td></tr>
+      <tr><td>Dark Cabaret</td><td>1</td></tr>
+      <tr><td>Easy Listening</td><td>1</td></tr>
+      <tr><td>Poetry</td><td>1</td></tr>
+    </tbody>
+    </table>
+</div>
+<h3>Key Findings</h3>
+<p><strong>Four major genre trends</strong> emerged from the visualizations:</p>
+<p><strong>In the 1970s</strong>, rock music dominated both charts and critic lists, indicating widespread popularity and critical acclaim. However, from the 1990s onward, rock occupies a significantly larger share of the RYM-only graph compared to the Billboard overlap. This suggests that while rock may have lost mainstream appeal, critics continue to value rock albums highly.</p>
+<p><strong>In the 1990s</strong>, hip hop is far more prominent in the Billboard + RYM dataset than in RYM alone. This implies that the genre’s initial critical recognition may have been driven by its overwhelming commercial success, and critics may have been forced to engage with a genre the public already embraced.</p>
+<p><strong>Jazz</strong> shows a strong presence in the RYM-only graph, especially from 1955 to 1980, yet it is virtually absent from the Billboard + RYM graph. This points to a disconnect where critics consistently admire jazz, but it rarely achieves mainstream popularity.</p>
+<p><strong>R&amp;B</strong>, especially in the early 1970s, shows a similar pattern to hip hop, appearing more in the Billboard + RYM graph than in RYM alone. This suggests its critical recognition may have lagged behind its popularity.</p>
+
+<h3>Conclusion</h3>
+<p>Our analysis reveals that popularity and prestige often diverge. Critics and the public don’t always value the same music, nor do they do so at the same time. Some genres, such as jazz, are increasingly prestige-focused, while others, like hip hop and R&amp;B, gained critical legitimacy after becoming mainstream. This highlights how music genres evolve not only through sound but also through shifting dynamics of cultural recognition and audience reception.</p>
+</div>
+</div>
+  
+<br> <br> <br> <br> 
+</div>
+
+
+

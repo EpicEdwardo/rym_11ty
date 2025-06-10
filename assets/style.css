@@ -18,6 +18,15 @@ body {
 	font-size: 1.5rem;
 }
 
+.text2 {
+  margin-left: 0%;
+  padding-top: 4cm;
+  padding-left: 2cm;
+  text-align: left;
+  font-family: "Diatype Variable";
+	font-size: 1.5rem;
+}
+
 nav ul {
     list-style: none;
     display: flex;
